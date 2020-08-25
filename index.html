@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-first-aritist" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/25/first-aritist/" class="article-date">
+  <time datetime="2020-08-25T14:07:14.536Z" itemprop="datePublished">2020-08-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h4 id="将logcat打印到指定文件"><a href="#将logcat打印到指定文件" class="headerlink" title="将logcat打印到指定文件"></a>将logcat打印到指定文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、创建指定文件，如D:&#x2F;logcat.txt；</span><br><span class="line">2、在cmd或者androidstudio的terminal中键入：adb logcat &gt;D:&#x2F;logcat.txt.</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Android问题：Activity-has-leaked-window-that-was-originally-added"><a href="#Android问题：Activity-has-leaked-window-that-was-originally-added" class="headerlink" title="Android问题：Activity has leaked window that was originally added"></a>Android问题：Activity has leaked window that was originally added</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">只需要在activity销毁时关闭Dialog就好。</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span>(mDialog != <span class="keyword">null</span>) &#123;</span><br><span class="line">mDialog.dismiss();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">super</span>.onDestroy();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置字体大小"><a href="#设置字体大小" class="headerlink" title="设置字体大小"></a>设置字体大小</h4><ul>
+<li>setTextSize(TypedValue.COMPLEX_UNIT_PX,15);</li>
+<li>setTextSize(TypedValue.COMPLEX_UNIT_SP,15); </li>
+<li>setTextSize(TypedValue.COMPLEX_UNIT_DIP,15); </li>
+</ul>
+<h4 id="十进制转化为十六进制，结果为C8"><a href="#十进制转化为十六进制，结果为C8" class="headerlink" title="十进制转化为十六进制，结果为C8"></a>十进制转化为十六进制，结果为C8</h4><blockquote>
+<p>Integer.toHexString(200);  </p>
+</blockquote>
+<h4 id="十六进制转化为十进制，结果140"><a href="#十六进制转化为十进制，结果140" class="headerlink" title="十六进制转化为十进制，结果140"></a>十六进制转化为十进制，结果140</h4><blockquote>
+<p>Integer.parseInt(“8C”,16);</p>
+</blockquote>
+<h4 id="Android中获取类名，方法名，与代码行数"><a href="#Android中获取类名，方法名，与代码行数" class="headerlink" title="Android中获取类名，方法名，与代码行数"></a>Android中获取类名，方法名，与代码行数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">StackTraceElement[] stackTrace &#x3D; Thread.currentThread().getStackTrace();</span><br><span class="line">int index &#x3D; 4;</span><br><span class="line">String className &#x3D; stackTrace[index].getFileName();</span><br><span class="line">String methodName &#x3D; stackTrace[index].getMethodName();</span><br><span class="line">int lineNumber &#x3D; stackTrace[index].getLineNumber();</span><br></pre></td></tr></table></figure>
+
+<h4 id="log添加过滤"><a href="#log添加过滤" class="headerlink" title="log添加过滤"></a>log添加过滤</h4><blockquote>
+<p>添加Log Tag的时候使用正则表达式，添加多个用“|”分割，添加一个不需要“|”。</p>
+</blockquote>
+<p><code>^(?!.*(TAG1|TAG2)).*$</code></p>
+<h4 id="Java引用"><a href="#Java引用" class="headerlink" title="Java引用"></a>Java引用</h4><table>
+<thead>
+<tr>
+<th align="left">引用</th>
+<th>区别</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">强引用</td>
+<td>1、当内存空间不足时，Java虚拟机宁愿抛出OutOfMemoryError错误，使程序异常终止，也不会靠随意回收具有强引用的对象来解决内存不足的问题<br>2、如果强引用对象不使用时，需要弱化从而使GC能够回收<br><code>obj = null;</code></td>
+</tr>
+<tr>
+<td align="left">软引用</td>
+<td>1、当只有内存空间不足的情况才会回收；</td>
+</tr>
+</tbody></table>
+<h4 id="scrollview与listview滑动冲突处理"><a href="#scrollview与listview滑动冲突处理" class="headerlink" title="scrollview与listview滑动冲突处理"></a>scrollview与listview滑动冲突处理</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">list.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() &#123;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span>(motionEvent.getAction() == MotionEvent.ACTION_UP)&#123;</span><br><span class="line">scroll.requestDisallowInterceptTouchEvent(<span class="keyword">false</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">scroll.requestDisallowInterceptTouchEvent(<span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h4><p>在String中，一个英文字符占1个字节，而中文字符根据编码的不同所占字节数也不同。在UTF-8编码下，一个中文字符占3个字节；而使用GBK编码时一个中文字符占2个字节。<br>|编码|长度|<br>| — | — |<br>|英文|1|<br>|utf-8|3|<br>|gbk|2|</p>
+<h4 id="ArrayList转化为String数组问题"><a href="#ArrayList转化为String数组问题" class="headerlink" title="ArrayList转化为String数组问题"></a>ArrayList<String>转化为String数组问题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String[] strArrayTrue &#x3D; (String[]) arrayList.toArray(new String[0]);  </span><br></pre></td></tr></table></figure>
+
+<h4 id="runOnUiThread"><a href="#runOnUiThread" class="headerlink" title="runOnUiThread"></a>runOnUiThread</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">runOnUiThread</span><span class="params">(Runnable action)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (Thread.currentThread() != mUiThread) &#123;</span><br><span class="line">mHandler.post(action);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">action.run();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="默认Handler"><a href="#默认Handler" class="headerlink" title="默认Handler"></a>默认Handler</h4><blockquote>
+<p>ActivityThread默认启用一个Handler，用来维护activty、service、application生命周期</p>
+</blockquote>
+<h4 id="hashmap-put存在的key时"><a href="#hashmap-put存在的key时" class="headerlink" title="hashmap()put存在的key时"></a>hashmap()put存在的key时</h4><blockquote>
+<p>更新map中的键值对，但返回oldValue；当key不存在时，返回null</p>
+</blockquote>
+<h4 id="隐式启动和显示启动"><a href="#隐式启动和显示启动" class="headerlink" title="隐式启动和显示启动"></a>隐式启动和显示启动</h4><blockquote>
+<p>Intent启动Activity分为两种，显示启动和隐士启动，显示启动就是在初始化Intent对象的时候直接引用需要启动的Activity的字节码，显示引用的好处就是可以直接告诉Intent对象启动的Activity对象不需要执行intent filter索引需要启动哪一个Activity，但是显示引用不能启动其他进程的Activity对象，因为无法获取其他进程的Activity对象的字节码，而隐式启动则可以通过配置Intent Filter启动其他进程的Activity对象，因此在应用内，我们一般都是使用显示启动的方式启动Activity，而如果需要启动其他应用的Activity时，一般使用隐式启动的方式。</p>
+</blockquote>
+<h4 id="查看wifi"><a href="#查看wifi" class="headerlink" title="查看wifi"></a>查看wifi</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netsh wlan show profiles</span><br><span class="line">netsh wlan show profile name&#x3D;&quot;ChinaNet-Yang&quot; key&#x3D;clear</span><br></pre></td></tr></table></figure>
+
+<h4 id="sharePreference中commit和apply区别"><a href="#sharePreference中commit和apply区别" class="headerlink" title="sharePreference中commit和apply区别"></a>sharePreference中commit和apply区别</h4><blockquote>
+<p>commit: 同步，先提交到内存，再提交到磁盘，又返回值；如果有多个线程，会等待正在操作的sp执行完后再处理；<br>apply：异步，立即提交内存（后面有新的提交数据会直接覆盖内存数据），再异步提交到磁盘，如果失败也不会有提示</p>
+</blockquote>
+<h4 id="gradlew"><a href="#gradlew" class="headerlink" title="gradlew"></a>gradlew</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、gradlew app:dependencies</span><br><span class="line">2、gradlew assemble --info</span><br></pre></td></tr></table></figure>
+
+<h4 id="char判空"><a href="#char判空" class="headerlink" title="char判空"></a>char判空</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D;&#x3D; &#39;\0&#39;  （a是空）</span><br></pre></td></tr></table></figure>
+
+<h4 id="action含义"><a href="#action含义" class="headerlink" title="action含义"></a>action含义</h4><blockquote>
+<p>action、data(set) 只有能设置一个，必须与intent-filter任何一个匹配<br>catagory 多个，每一个必须域intent-filter任何一个匹配</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>action</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>android.intent.action.MAIN</td>
+<td>应用程序入口</td>
+</tr>
+<tr>
+<td>android.intent.category.LAUNCHER</td>
+<td>是否显示在程序列表里</td>
+</tr>
+<tr>
+<td>android.intent.category.DEFAULT</td>
+<td>intent默认包含该intentfilter</td>
+</tr>
+<tr>
+<td>android.intent.category.HOME</td>
+<td>设备启动时第一个程序</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/25/first-aritist/" data-id="ckea0yp730000or2jc7r783cq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/25/hello-world/" class="article-date">
+  <time datetime="2020-08-25T13:58:47.669Z" itemprop="datePublished">2020-08-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/25/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/25/hello-world/" data-id="ckea0qbz30000fc2j9al392v3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/25/first-aritist/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/25/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
